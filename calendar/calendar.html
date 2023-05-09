@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="assets/css/Auto-Modal-Popup.css">
     <link rel="stylesheet" href="assets/css/Dark-NavBar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/css/theme.bootstrap_4.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">-->
+    <link rel="stylesheet" href="assets/jquery-ui-1.13.2/jquery-ui-1.13.2/jquery-ui.css">
     <link rel="stylesheet" href="assets/css/Login-Box-En.css">
     <link rel="stylesheet" href="assets/css/Ludens---1-Index-Table-with-Search--Sort-Filters-v20.css">
     <link rel="stylesheet" href="assets/css/Powerful-Calendar.css">
@@ -68,7 +69,7 @@
                         <div class="col-12 col-sm-6 col-md-6">
                             <h3 class="text-dark mb-4">Мероприятия</h3>
                         </div>
-                        <div><a class="btn btn-success" onclick="sendRequest()" role="button">Отправить запрос</a></div>
+<!--                        <div><a class="btn btn-success" onclick="sendRequest()" role="button">Отправить запрос</a></div>-->
                         <div class="col-12 col-sm-6 col-md-6 offset-xl-0 text-end" style="margin-bottom: 30px;">
                             <a class="btn btn-success" role="button" style="margin: 6px;width: 172.375px;">
                                 <i class="fa fa-file-excel-o">
@@ -149,31 +150,35 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <form data-bss-recipient="67b465af92ed4ffdcc0537eaadc6dd61">
-                            <div class="form-group mb-3">
-                                <label class="form-label" for="nameInput">Название</label>
-                                <input class="form-control" type="text" required="" placeholder="Название мероприятия" id="nameInput" name="name">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label class="form-label" for="descriptionInput">Описание</label>
-                                <textarea class="form-control form-control-lg" placeholder="Описание" id="descriptionInput"></textarea>
-                            </div>
-                            <div class="form-group mb-3">
-                                <label class="form-label" for="dateInput">Дата</label>
-                                <input class="form-control" required="" type="datetime-local" id="dateInput">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label class="form-label" for="locationInput">Место проведения</label>
-                                <input class="form-control" type="text" required="" placeholder="Место" id="locationInput">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label class="form-label" for="participantsInput">ЫЫЫЫЫЫЫЫЫ</label>
-                                <select class="form-select" multiple="" id="participantsInput">
-                                <option value="">Дима</option>
-                                <option value="">Лёша</option>
-                                <option value="">Даша</option>
-                            </select></div>
+<!--                            <div class="form-group mb-3">-->
+<!--                                <label class="form-label" for="nameInput">Название</label>-->
+<!--                                <input class="form-control" type="text" required="" placeholder="Название мероприятия" id="nameInput" name="name">-->
+<!--                            </div>-->
+<!--                            <div class="form-group mb-3">-->
+<!--                                <label class="form-label" for="descriptionInput">Описание</label>-->
+<!--                                <textarea class="form-control form-control-lg" placeholder="Описание" id="descriptionInput"></textarea>-->
+<!--                            </div>-->
+<!--                            <div class="form-group mb-3">-->
+<!--                                <label class="form-label" for="dateInput">Дата</label>-->
+<!--                                <input class="form-control" required="" type="datetime-local" id="dateInput">-->
+<!--                            </div>-->
+<!--                            <div class="form-group mb-3">-->
+<!--                                <label class="form-label" for="inputOwnerId">Владелец</label>-->
+<!--                                <input class="form-control" required="" type="text" id="inputOwnerId">-->
+<!--                            </div>-->
+<!--                            <div class="form-group mb-3">-->
+<!--                                <label class="form-label" for="locationInput">Место проведения</label>-->
+<!--                                <input class="form-control" type="text" required="" placeholder="Место" id="locationInput">-->
+<!--                            </div>-->
+<!--                            <div class="form-group mb-3">-->
+<!--                                <label class="form-label" for="participantsInput">Участники</label>-->
+<!--                                <select class="form-select" multiple="" id="participantsInput">-->
+<!--                                <option value="п">Дима</option>-->
+<!--                                <option value="п">Лёша</option>-->
+<!--                                <option value="п">Даша</option>-->
+<!--                            </select></div>-->
                             <div class="modal-footer">
-                                <button class="btn btn-dark" style="width: 100%;" type="submit">Сохранить</button>
+                                <button id="saveButton" class="btn btn-dark" style="width: 100%;" type="submit">Сохранить</button>
                             </div>
                         </form>
                     </div>
@@ -203,7 +208,7 @@
                                     class="form-control" required="" type="datetime-local"></div>
                             <div class="form-group mb-3"><label class="form-label">Место проведения</label><input
                                     class="form-control" type="text" required="" placeholder="Место"></div>
-                            <div class="form-group mb-3"><label class="form-label">!!!!!!!!!!!!!!!!!!!</label><select
+                            <div class="form-group mb-3"><label class="form-label">Участники</label><select
                                     class="form-select" multiple="">
                                 <option value="">Дима</option>
                                 <option value="">Лёша</option>
@@ -285,14 +290,16 @@
 </div>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/SendRequest.js"></script>
+<script src="assets/js/saveEvent.js"></script>
 <!--<script src="assets/js/smart-forms.min.js"></script>-->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 <script src="assets/js/Auto-Modal-Popup.js"></script>
+<script src="assets/jquery-ui-1.13.2/jquery-ui-1.13.2/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/jquery.tablesorter.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/widgets/widget-filter.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/widgets/widget-storage.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 <script src="assets/js/Ludens---1-Index-Table-with-Search--Sort-Filters-v20.js"></script>
 <script src="assets/js/Powerful-Calendar.js"></script>
